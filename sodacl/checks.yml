@@ -22,3 +22,13 @@ checks for fact_finance:
 
 checks for dim_organization:
   - duplicates(organization_key) = 0
+
+checks for dim_customer:
+  - count > 0
+  - schema:
+      warn:
+        when required column missing:
+          - id
+  - invalid(gender) = 0:
+      valid values:
+        - M
