@@ -1,0 +1,24 @@
+checks for dim_account:
+  - count between 20 and 100
+  - count > 0
+  - schema:
+      fail:
+        when required column missing:
+          - account_type
+
+checks for dim_product:
+  - count > 0
+  - invalid(color) = 0:
+      #valid values:
+      #  - Black
+      #  - Blue
+
+#checks for dim_geography:
+#  - invalid(ip_address_locator):
+#      valid format: ipv4_address
+
+checks for fact_finance:
+  - reference from (organization_key) to dim_organization (organization_key)
+
+checks for dim_organization:
+  - duplicates(organization_key) = 0
