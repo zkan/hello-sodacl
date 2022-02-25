@@ -1,2 +1,3 @@
-# hello-sodacl
-Hello, SodaCL
+# Hello, SodaCL
+
+Credit: https://github.com/sodadata/sodacl-workshop
